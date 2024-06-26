@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Lenguaje de Señas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body onload="showSection('inicio')">
+    <header>
+        <h1 class="unique-header" onclick="showSection('inicio')">Enseñando <img src="img/heart-hands.png" alt="Corazón hecho por manos" class="heart-icon"></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('inicio')">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown()">Lenguaje de Señas</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showSection('alfabeto')">Alfabeto</a>
+                    <a href="#" onclick="showSection('familia')">Familia</a>
+                    <a href="#" onclick="showSection('escuela')">Escuela</a>
+                    <a href="#" onclick="showSection('comunes')">Comunes</a>
+                </div>
+            </li>
+            <li><a href="#" onclick="showSection('sobre-nosotros')">Sobre Nosotros</a></li>
+            <li><a href="#" onclick="showSection('recursos')">Recursos</a></li>
+        </ul>
+    </nav>
+    <section id="inicio" class="section">
+        <div class="text-image-block">
+            <div class="text-left">
+                <h2>Bienvenidos</h2>
+                <p>El lenguaje de señas es una herramienta esencial para la comunicación inclusiva. Aprenderlo nos ayuda a romper barreras y a comprender mejor a las personas sordas.</p>
+            </div>
+            <div class="image-right">
+                <img src="img/señas1.png" alt="Imagen de señas 1">
+            </div>
+        </div>
+        <div class="text-center">
+            <h2>Datos Curiosos</h2>
+            <p>El lenguaje de señas varía de país en país, y cada uno tiene su propio sistema. Por ejemplo, la Lengua de Señas Americana (ASL) es diferente de la Lengua de Señas Mexicana (LSM).</p>
+        </div>
+        <div class="text-image-block">
+            <div class="image-left">
+                <img src="img/señas2.png" alt="Imagen de señas 2">
+            </div>
+            <div class="text-right">
+                <h2>Importancia de Aprender</h2>
+                <p>Aprender lenguaje de señas no solo es útil para comunicarse con personas sordas, sino que también mejora nuestras habilidades cognitivas y de lenguaje.</p>
+            </div>
+        </div>
+    </section>
+    <section id="alfabeto" class="section" style="display: none;">
+        <h2>Alfabeto</h2>
+        <div class="translation-container">
+            <input type="text" id="input-text" placeholder="Escribe una palabra...">
+            <button id="translate-button" onclick="translateText()">Traducir</button>
+        </div>
+        <div id="translated-images"></div>
+        <div class="button-container">
+            <button class="action-button" onclick="clearSelection()">Limpiar</button>
+            <button class="action-button" onclick="removeLast()">Borrar última letra</button>
+        </div>
+        <h3>Selecciona las letras:</h3>
+        <div class="img-container">
+            <img src="img/a.png" alt="a" onclick="selectImage('a')">
+            <img src="img/b.png" alt="b" onclick="selectImage('b')">
+            <img src="img/c.png" alt="c" onclick="selectImage('c')">
+            <img src="img/d.png" alt="d" onclick="selectImage('d')">
+            <img src="img/e.png" alt="e" onclick="selectImage('e')">
+            <img src="img/f.png" alt="f" onclick="selectImage('f')">
+            <img src="img/g.png" alt="g" onclick="selectImage('g')">
+            <img src="img/h.png" alt="h" onclick="selectImage('h')">
+            <img src="img/i.png" alt="i" onclick="selectImage('i')">
+            <img src="img/j.png" alt="j" onclick="selectImage('j')">
+            <img src="img/k.png" alt="k" onclick="selectImage('k')">
+            <img src="img/l.png" alt="l" onclick="selectImage('l')">
+            <img src="img/ll.png" alt="ll" onclick="selectImage('ll')">
+            <img src="img/m.png" alt="m" onclick="selectImage('m')">
+            <img src="img/n.png" alt="n" onclick="selectImage('n')">
+            <img src="img/ñ.png" alt="ñ" onclick="selectImage('ñ')">
+            <img src="img/o.png" alt="o" onclick="selectImage('o')">
+            <img src="img/p.png" alt="p" onclick="selectImage('p')">
+            <img src="img/q.png" alt="q" onclick="selectImage('q')">
+            <img src="img/r.png" alt="r" onclick="selectImage('r')">
+            <img src="img/rr.png" alt="rr" onclick="selectImage('rr')">
+            <img src="img/s.png" alt="s" onclick="selectImage('s')">
+            <img src="img/t.png" alt="t" onclick="selectImage('t')">
+            <img src="img/u.png" alt="u" onclick="selectImage('u')">
+            <img src="img/v.png" alt="v" onclick="selectImage('v')">
+            <img src="img/w.png" alt="w" onclick="selectImage('w')">
+            <img src="img/x.png" alt="x" onclick="selectImage('x')">
+            <img src="img/y.png" alt="y" onclick="selectImage('y')">
+            <img src="img/z.png" alt="z" onclick="selectImage('z')">
+        </div>
+        <div id="selected-word" class="selected-word"></div>
+        <div id="selected-letters" class="selected-word"></div>
+    </section>
+    <section id="familia" class="section" style="display: none;">
+        <h2>Familia</h2>
+        <div class="img-container">
+            <!-- Añade tus GIFs de la familia aquí -->
+            <img src="img/familia1.gif" alt="familia1" onclick="openGifModal('img/familia1.gif')">
+            <img src="img/familia2.gif" alt="familia2" onclick="openGifModal('img/familia2.gif')">
+            <!-- Más GIFs -->
+        </div>
+    </section>
+    <section id="escuela" class="section" style="display: none;">
+        <h2>Escuela</h2>
+        <div class="img-container">
+            <!-- Añade tus GIFs de la escuela aquí -->
+            <img src="img/escuela1.gif" alt="escuela1" onclick="openGifModal('img/escuela1.gif')">
+            <img src="img/escuela2.gif" alt="escuela2" onclick="openGifModal('img/escuela2.gif')">
+            <!-- Más GIFs -->
+        </div>
+    </section>
+    <section id="comunes" class="section" style="display: none;">
+        <h2>Comunes</h2>
+        <div class="img-container">
+            <!-- Añade tus GIFs de comunes aquí -->
+            <img src="img/comunes1.gif" alt="comunes1" onclick="selectImage('comunes1')">
+            <img src="img/comunes2.gif" alt="comunes2" onclick="selectImage('comunes2')">
+            <img src="img/comunes3.gif" alt="comunes3" onclick="selectImage('comunes3')">
+            <img src="img/comunes4.gif" alt="comunes4" onclick="selectImage('comunes4')">
+            <img src="img/comunes5.gif" alt="comunes5" onclick="selectImage('comunes5')">
+            <img src="img/comunes6.gif" alt="comunes6" onclick="selectImage('comunes6')">
+            <img src="img/comunes7.gif" alt="comunes7" onclick="selectImage('comunes7')">
+            <img src="img/comunes8.gif" alt="comunes8" onclick="selectImage('comunes8')">
+            <img src="img/comunes9.gif" alt="comunes9" onclick="selectImage('comunes9')">
+            <img src="img/comunes10.gif" alt="comunes10" onclick="selectImage('comunes10')">
+            <!-- Más GIFs -->
+        </div>
+    </section>
+    <section id="sobre-nosotros" class="section" style="display: none;">
+        <div class="text-center">
+            <h2>TESCI</h2>
+            <p>El proyecto se desarrollo por parte del Tecnologico de estudios superiores de cuautitlan izcalli para la materia de Metodologias del negocio aplicadas al desarrollo de software
+                esto para poder ayudart un poco a la comprension y endtendimiento de las personas para que puedan entender y apoyar un poco mas a las personas con esta discapacidad asi como ayudar 
+                a poder expresarse de manera correcta con las personas que tienen esta discapacidad.</p>
+        </div>
+        <div class="text-image-block">
+            <div class="text-left">
+                <h2>Miembro del del equipo 1</h2>
+                <p>Biografia del estudiante.</p>
+            </div>
+            <div class="image-right">
+                <img src="img/señas017.png" alt="Imagen de señas 1">
+            </div>
+        </div>
+        <div class="text-image-block">
+            <div class="image-left">
+                <img src="img/señas017.png" alt="Imagen de señas 2">
+            </div>
+            <div class="text-right">
+                <h2>Miembro del del equipo 2</h2>
+                <p>Biografia del estudiante.</p>
+            </div>
+        </div>
+        <div class="text-image-block">
+            <div class="text-left">
+                <h2>Miembro del del equipo 3</h2>
+                <p>Biografia del estudiante.</p>
+            </div>
+            <div class="image-right">
+                <img src="img/señas017.png" alt="Imagen de señas 1">
+            </div>
+        </div>
+        <div class="text-image-block">
+            <div class="image-left">
+                <img src="img/señas017.png" alt="Imagen de señas 2">
+            </div>
+            <div class="text-right">
+                <h2>Miembro del del equipo 4</h2>
+                <p>Biografia del estudiante.</p>
+            </div>
+        </div>
+    </section>
+    <section id="recursos" class="section" style="display: none;">
+        <h2>Recursos</h2>
+        <!-- Contenido de la sección de recursos -->
+    </section>
+    <div id="translation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div id="modal-images" class="modal-images"></div>
+            <div id="modal-letters" class="modal-letters"></div>
+        </div>
+    </div>
+    <div id="gif-modal" class="modal">
+        <div class="gif-modal-content">
+            <span class="close-button" onclick="closeGifModal()">&times;</span>
+            <img id="gif-image" class="gif-image" src="" alt="GIF">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
